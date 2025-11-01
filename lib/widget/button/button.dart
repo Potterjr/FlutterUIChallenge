@@ -23,6 +23,17 @@ class Button extends StatelessWidget {
       this.isDisabled = false});
 
   @override
+  /// Builds a ElevatedButton with a SizedBox widget as its parent.
+  ///
+  /// The SizedBox widget constrains the ElevatedButton's width to be 94% of the screen's width,
+  /// and its height to be 7% of the screen's height if the [heigh] property is not provided.
+  ///
+  /// The ElevatedButton's style is defined with a [ButtonStyle] widget, which sets the
+  /// background color to be grey if the [isDisabled] property is true, and sets the foreground
+  /// color to be the color defined in the [textStyle] property.
+  ///
+  /// The ElevatedButton's child is an [AutoSizeText] widget, which displays the text defined in
+  /// the [label] property with the font size and weight defined in the [textStyle] property.
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.94,

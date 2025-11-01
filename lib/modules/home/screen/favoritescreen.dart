@@ -16,6 +16,9 @@ class Favoritescreen extends GetView<HomeController> {
     return layoutFavorite();
   }
 
+  /// A widget that displays a list of favorite products.
+  /// If the list of favorite products is empty, it will display a list of skeletons.
+  /// Otherwise, it will display a list of favorite products.
   Widget layoutFavorite() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,

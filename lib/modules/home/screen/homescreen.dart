@@ -15,6 +15,14 @@ class HomeScreen extends GetView<HomeController> {
   final controller = Get.put(HomeController());
 
   @override
+  /// Builds the widget tree for the home screen.
+  ///
+  /// This widget is responsible for building the home screen which
+  /// includes a bottom navigation bar with three items: Home, Saved,
+  /// and Cart. It also includes a page view with three pages: Home
+  /// screen, Favorites screen, and Cart screen. The home screen
+  /// is the first page of the page view. The bottom navigation bar is
+  /// used to navigate between the three pages of the page view.
   Widget build(BuildContext context) {
     return Obx(() {
       return Scaffold(
@@ -22,7 +30,7 @@ class HomeScreen extends GetView<HomeController> {
           title: controller.navigatepage.value == 0
               ? Text("Home")
               : controller.navigatepage.value == 1
-              ? Text("Favorites")
+              ? Text("Saved")
               : Text("Cart"),
         ),
         body: PageView(
@@ -41,7 +49,7 @@ class HomeScreen extends GetView<HomeController> {
 
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.house), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourite'),
+            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Saved'),
             BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
           ],
           selectedItemColor: Colors.red[800],

@@ -14,6 +14,11 @@ class Cartscreen extends GetView<HomeController> {
   final controller = Get.put(HomeController());
 
   @override
+/// Builds the cart screen with a list of products and a total price at the bottom.
+/// The list of products is a Obx widget, which is a widget that rebuilds when the value of the observable it is listening to changes.
+/// The products are displayed as a list of cards, with the option to delete a product from the cart.
+/// If the cart is empty, it will display a skeleton list instead.
+/// The total price is displayed at the bottom of the screen, and is also an Obx widget.
   Widget build(BuildContext context) {
     return Obx(() {
       return Scaffold(
@@ -22,6 +27,7 @@ class Cartscreen extends GetView<HomeController> {
       );
     });
   }
+
 
   Widget layoutCart() {
     return Row(
@@ -34,6 +40,7 @@ class Cartscreen extends GetView<HomeController> {
     );
   }
 
+  
   Widget listProductCart() {
     var cartProducts = controller.cart.value.productItemscart ?? [];
 

@@ -27,6 +27,9 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
+  /// Get product from mock endpoint url.
+  /// If the response is null, it will return immediately.
+  /// After getting the product, it will call [getFavorite] to refresh favorite pref.
   Future<void> getProduct() async {
     var response = await networkservice.getmock("mock endpoint url");
     if (response == null) {
@@ -37,9 +40,12 @@ class HomeController extends GetxController {
     getFavorite();
   }
 
+  /// Save product to favorite pref.
+  /// If product is already in favorite pref, it will remove product from favorite pref.
+  /// If product is not in favorite pref, it will add product to favorite pref.
+  /// After saving to favorite, it will call [getFavorite] to refresh favorite pref.
   Future<void> saveFavorite(ProductItems productItems) async {
     final localStorage = LocalStorageService();
-    //localStorage.clearFavoritePref();
     final favoritelist = await localStorage.getFavoritePref();
 
     final duplicateProduct = favoritelist?.firstWhere(
@@ -56,6 +62,9 @@ class HomeController extends GetxController {
     getFavorite();
   }
 
+/// Get favorite pref from local storage and update product items with the response.
+/// If the response is null, it will return immediately.
+/// After updating product items, it will call [refresh] to update the product.
   Future<void> getFavorite() async {
     final favoritelist = await localStorage.getFavoritePref();
     product.value.productItems?.forEach((element) {
@@ -64,6 +73,9 @@ class HomeController extends GetxController {
     product.refresh();
   }
 
+/// Get cart pref from local storage and update cart with the response.
+/// If the response is null, it will return immediately.
+/// After updating cart, it will call [getTotal] to update total price of the cart.
   Future<void> getProductCart() async {
     var response = await localStorage.getCartPref();
     if (response == null) {
@@ -73,6 +85,11 @@ class HomeController extends GetxController {
     getTotal();
   }
 
+/// Save response to cart pref and increment quantity of the product.
+/// If product is already in cart, it will increment quantity by 1.
+/// If product is not in cart, it will add product to cart with quantity 1.
+/// After saving to cart, it will call [getProductCart] to refresh the cart.
+/// Then it will navigate to page with index 2.
   Future<void> savetoCart(response) async {
     final cartList = await localStorage.getCartPref();
 
@@ -104,6 +121,16 @@ class HomeController extends GetxController {
     getProductCart();
   }
 
+
+ 
+  /// Update quantity of product in cart.
+  ///
+  /// If [isIncrement] is true, it will increment quantity of the product.
+  /// If [isIncrement] is false, it will decrement quantity of the product.
+  ///
+  /// [id] is the id of the product.
+  ///
+  /// After updating quantity, it will call [getProductCart] to refresh the cart.
   Future<void> updateQuantityCart(bool isIncrement, int id) async {
     final cartList = await localStorage.getCartPref();
 

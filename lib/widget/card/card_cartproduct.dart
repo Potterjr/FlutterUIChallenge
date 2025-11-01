@@ -23,6 +23,18 @@ class CardCartProduct extends StatelessWidget {
   });
 
   @override
+/// Builds a card widget with a product image, product name, product price, and a quantity selector.
+///
+/// The card widget is wrapped in a [LayoutBuilder] widget, which is used to size the card based on the available space.
+///
+/// The product image is displayed in a [ClipRRect] widget with a circular border radius of 10.
+///
+/// The product name is displayed in an [AutoSizeText] widget with a minimum font size of 18 and a maximum font size of 22.
+///
+/// The product price is displayed in an [AutoSizeText] widget with a minimum font size of 16 and a maximum font size of 20.
+///
+/// The quantity selector is a row of widgets containing a minus button, a text widget displaying the quantity, and a plus button.
+/// The buttons are wrapped in containers with a decoration of a white background and a grey border.
   Widget build(BuildContext context) {
     final isTablet = DeviceUtils.deviceType(context) == 'Tablet';
     final imageWidth = isTablet ? 150.0 : 100.0;

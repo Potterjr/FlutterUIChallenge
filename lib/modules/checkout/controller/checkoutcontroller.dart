@@ -30,6 +30,11 @@ class CheckoutController extends GetxController {
     });
   }
 
+  /// Send cart items to checkout endpoint
+  /// 
+  /// Set the qr code to the checkout endpoint with the total price
+  /// 
+  /// The checkout endpoint is: https://payment.spw.challenge/checkout?price=$%7Bprice%7D
   Future<void> sendToCheckout() async {
     final url = API.url(Endpoint.checkout);
     qrCode.value = "$url&price=$totalCart";

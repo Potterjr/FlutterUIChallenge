@@ -9,6 +9,14 @@ class Checkoutscreen extends GetView<CheckoutController> {
   @override
   final controller = Get.put(CheckoutController());
   @override
+/// Builds a Scaffold with an AppBar and a Row containing a Column of widgets.
+///
+/// The Column contains a QrImageView, a SizedBox, an AutoSizeText with the text "Scan And Pay",
+/// another SizedBox, and an AutoSizeText with the total price of the items in the cart.
+///
+/// The QrImageView displays the QR code provided by the controller.
+/// The AutoSizeText widgets automatically adjust their font size based on the available space.
+/// The total price of the items in the cart is retrieved from the controller.
   Widget build(context) {
     return Obx(() {
       return Scaffold(

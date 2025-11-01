@@ -9,6 +9,21 @@ class Productdetail extends GetView<Productdetail> {
   const Productdetail({super.key});
 
   @override
+/// Builds a product detail screen with a product image, product name, product price, add to cart button, and favorite button.
+///
+/// The screen is wrapped in a [Hero] widget with a tag that is used to identify the product that is being viewed.
+///
+/// The screen is also wrapped in a [Theme] widget with a divider theme that is used to remove the divider between the app bar and the body of the screen.
+///
+/// The product image is displayed in a [ClipRRect] widget with a circular border radius of 10.
+///
+/// The product name is displayed in an [AutoSizeText] widget with a minimum font size of 26 and a maximum font size of 30.
+///
+/// The product price is displayed in an [AutoSizeText] widget with a minimum font size of 16 and a maximum font size of 20.
+///
+/// The add to cart button is displayed in a [Button] widget with a red color outline and a bold font weight.
+///
+/// The favorite button is displayed in an [IconButton] widget with a red color if the product is favorited and a grey color if the product is not favorited.
   Widget build(BuildContext context) {
     final controller = Get.put(Productdetailcontroller());
 

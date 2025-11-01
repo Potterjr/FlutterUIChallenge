@@ -20,6 +20,15 @@ class CardProduct extends StatelessWidget {
   });
 
   @override
+/// Builds a product card widget with an image, product name, price, and a favorite button.
+///
+/// The product card is sized based on the device type and screen size.
+///
+/// The product image is displayed in a [Hero] widget with a tag that is used to identify the product that is being viewed.
+///
+/// The product name and price are displayed in [AutoSizeText] widgets, with the font size and style adjusted based on the device type and screen size.
+///
+/// The favorite button is displayed in an [IconButton] widget, with the color changed based on whether the product is favorited or not.
   Widget build(BuildContext context) {
     final cardheight = DeviceUtils.deviceType(context) == "Tablet"
         ? MediaQuery.of(context).size.height * 0.38
