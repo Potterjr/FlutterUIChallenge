@@ -76,10 +76,22 @@ flutter run
 ```sh
 flutter run --flavor staging --dart-define=FLAVOR=staging
 ```
+**To Build the default `staging` flavor:**
+```sh
+flutter build apk --flavor staging --debug
+
+```
+
 
 **To run the `production` flavor:**
 ```sh
 flutter run --flavor production --dart-define=FLAVOR=production
+```
+
+**To Build the default `production` flavor:**
+```sh
+flutter build apk --flavor production --release
+
 ```
 
 ## Key Dependencies

@@ -24,7 +24,7 @@ android {
     }
 
     flavorDimensions += "default"
-productFlavors {
+    productFlavors {
     create("staging") {
         dimension = "default"
         applicationIdSuffix = ".staging"
