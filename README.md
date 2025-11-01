@@ -74,7 +74,7 @@ flutter run
 ```
 **or**
 ```sh
-flutter run --flavor production --dart-define=FLAVOR=production
+flutter run --flavor staging --dart-define=FLAVOR=staging
 ```
 
 **To run the `production` flavor:**
