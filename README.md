@@ -1,5 +1,4 @@
 # Flutter UI Challenge - Shopping App
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/Potterjr/FlutterUIChallenge)
 
 This repository contains a Flutter-based shopping application UI, developed as a coding challenge. The app showcases a clean, responsive interface for a modern e-commerce experience, complete with product browsing, a persistent shopping cart, a favorites list, and a mock checkout process.
 
@@ -77,6 +76,11 @@ flutter run
 **To run the `production` flavor:**
 ```sh
 flutter run --flavor production --dart-define=FLAVOR=production
+```
+
+**To run the `staging` flavor:**
+```sh
+flutter run --flavor staging --dart-define=FLAVOR=staging
 ```
 
 ## Key Dependencies
