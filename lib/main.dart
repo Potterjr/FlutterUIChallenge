@@ -15,11 +15,24 @@ void main() async {
   runApp(DevicePreview(builder: (context) => const MainApp()));
 }
 
+/// Initialize the setup for the application.
+///
+/// This function is responsible for setting the preferred
+/// orientations for the application, and initializing the API.
+///
+/// It is called immediately after the application is started.
+///
+/// It is an asynchronous function, and it will not block the
+/// execution of the application.
 void onSetup() async {
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitDown,
-    DeviceOrientation.portraitUp,
-  ]);
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  widgetsBinding.addPostFrameCallback((timeStamp) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+  });
+
   API.init();
 }
 
