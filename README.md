@@ -71,16 +71,13 @@ The application is configured with two build flavors: `staging` and `production`
 **To run the default `staging` flavor:**
 ```sh
 flutter run
+or
+flutter run --flavor production --dart-define=FLAVOR=production
 ```
 
 **To run the `production` flavor:**
 ```sh
 flutter run --flavor production --dart-define=FLAVOR=production
-```
-
-**To run the `staging` flavor:**
-```sh
-flutter run --flavor staging --dart-define=FLAVOR=staging
 ```
 
 ## Key Dependencies
