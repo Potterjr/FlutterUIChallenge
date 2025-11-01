@@ -1,0 +1,57 @@
+{
+  "version": "0.2.0",
+  
+  "configurations": [
+        {
+      "name": "DEMO-UI-MOBILE (Staging | Debug) Website Or Windows",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "deviceId": "chrome",
+      "args": [
+        "--flavor", "staging",
+        "--dart-define", "FLAVOR=staging"
+      ]
+    },
+    {
+      "name": "DEMO-UI-MOBILE (Staging | Debug)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "deviceId": "emulator-5554",
+      "args": [
+        "--flavor", "staging",
+        "--dart-define", "FLAVOR=staging"
+      ]
+    },
+    {
+      "name": "DEMO-UI-MOBILE (Production | Release)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "deviceId": "emulator-5554",
+      "args": [
+        "--flavor", "production",
+        "--dart-define", "FLAVOR=production"
+      ]
+    },
+
+  ],
+  "compounds": [
+    {
+      "name": "Staging on Emulator (Debug)",
+      "configurations": ["DEMO-UI-MOBILE (Staging | Debug)"]
+    },
+    {
+      "name": "Production on Emulator (Release)",
+      "configurations": ["DEMO-UI-MOBILE (Production | Release)"]
+    },
+    {
+      "name": "All devices",
+      "configurations": ["DEMO-UI-MOBILE (Staging | Debug)", "DEMO-UI-MOBILE (Production | Release)"]
+        }
+  ]
+}

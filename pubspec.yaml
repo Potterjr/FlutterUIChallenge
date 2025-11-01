@@ -1,0 +1,35 @@
+name: ex_ui_shoping
+description: "A Challenge project for Flutter Developers"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  auto_size_text: ^3.0.0
+  device_preview: ^1.3.1
+  dio: ^5.9.0
+  flutter:
+    sdk: flutter
+  flutter_slidable: ^4.0.3
+  font_awesome_flutter: ^10.12.0
+  get: ^4.7.2
+  shared_preferences: ^2.5.3
+  skeletonizer: ^2.1.0+1
+  flutter_dotenv: ^5.1.0
+  qr_flutter: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    #- assets/images/
+    - assets/mock/mockdata.json
+    - .env.staging
+    - .env.production
